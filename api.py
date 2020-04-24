@@ -29,12 +29,12 @@ class Query(graphene.ObjectType):
     coronavirus_info = graphene.Field(
         graphene.List(Region),
         regions=graphene.Argument(
-            graphene.List(graphene.String), default_value=tuple(), required=False
+            graphene.List(graphene.String), default_value=(None, ), required=False
         ),
     )
 
     def resolve_coronavirus_info(self, info, regions):
-        return list(get_data(tuple(regions)))
+        return list(get_data(*regions))
 
 
 # noinspection PyTypeChecker
