@@ -1,9 +1,7 @@
-import logging
 from functools import lru_cache
 from typing import Tuple
 
 import bs4
-import httpx
 import requests
 
 
@@ -11,12 +9,6 @@ import requests
 def get_data(regions: Tuple[str]):
     data = requests.get("https://стопкоронавирус.рф/").text
     doc = bs4.BeautifulSoup(data, "html.parser")
-    yield dict(
-        region=data,
-        infected=0,
-        recovered=0,
-        dead=0,
-    )
     for el in doc.select_one(".d-map__list").select("tr"):
         region, infected, recovered, dead = list(
             map(lambda a: list(a.strings)[0], el.select("th, td"))
