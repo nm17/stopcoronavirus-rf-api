@@ -1,0 +1,7 @@
+{
+  "name": "Стопкоронавирус.рф API",
+  "description": "GraphQL API для стопкоронавирус.рф",
+  "repository": "https://github.com/nm17/stopcoronavirus-rf-api",
+  "logo": "https://dalee.cdnvideo.ru/stopcoronavirus.rf/img/logo.svg",
+  "keywords": ["covid19", "coronavirus", "russia", "api"]
+}
