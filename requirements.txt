@@ -2,4 +2,4 @@ beautifulsoup4
 fastapi
 graphene
 uvicorn
-httpx
+requests

@@ -4,11 +4,12 @@ from typing import Tuple
 
 import bs4
 import httpx
+import requests
 
 
 @lru_cache(3)
 def get_data(regions: Tuple[str]):
-    data = httpx.get("https://стопкоронавирус.рф/").text
+    data = requests.get("https://стопкоронавирус.рф/").text
     doc = bs4.BeautifulSoup(data, "html.parser")
     yield dict(
         region=data,
