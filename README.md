@@ -1,5 +1,7 @@
 # stopcoronavirus-rf-api
-GraphQL API для стопкоронавирус.рф
+GraphQL API для стопкоронавирус.рф  
+
+  - **Рабочее API**: https://stopcoronavirus-rf-api.herokuapp.com/
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
