@@ -9,8 +9,13 @@ import httpx
 @lru_cache(3)
 def get_data(regions: Tuple[str]):
     data = httpx.get("https://стопкоронавирус.рф/").text
-    logging.warning(data)
     doc = bs4.BeautifulSoup(data, "html.parser")
+    yield dict(
+        region=data,
+        infected=0,
+        recovered=0,
+        dead=0,
+    )
     for el in doc.select_one(".d-map__list").select("tr"):
         region, infected, recovered, dead = list(
             map(lambda a: list(a.strings)[0], el.select("th, td"))
